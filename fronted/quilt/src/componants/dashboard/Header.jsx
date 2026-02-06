@@ -19,7 +19,7 @@ export default function Header() {
                  <li className='cursor-pointer hover:text-blue-300'>history </li>
                  <li className='cursor-pointer hover:text-blue-300  flex items-center text-black rounded-lg px-1 bg-white'>{isauth  ? user.username:'sign in'}<img className='h-10 ml-2'  src='https://cdn-icons-png.flaticon.com/512/8345/8345328.png'/></li>
                </ul>
-              <div className="hamburger absolute top-3 flex right-3">{ishamopen ? 
+              <div className="md:hidden hamburger absolute top-3 flex right-3">{ishamopen ? 
                 <i onClick={()=>{setishamopen(!ishamopen)}} className="fa-solid fa-bars " style={{color: '#f0eeee'}}></i>
               :  <i onClick={()=>{setishamopen(!ishamopen)}} className="fas fa-times"></i> 
               }

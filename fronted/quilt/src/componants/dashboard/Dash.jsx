@@ -9,7 +9,7 @@ const Dash = () => {
   const navigate = useNavigate();
 
   const [isauth,setisauth] = useState(false)
-  const [ishamopen,setishamopen] = useState(true)
+
   const [user,setuser] = useState(null)
   const [allfood,setallfood] = useState([])
   const [rest,setrest] = useState([])
