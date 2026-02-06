@@ -1,17 +1,16 @@
 const express  = require('express');
-const cors = require('cors');
+// const cors = require('cors');
 const colors = require('colors');
 const morgan = require('morgan');
 require('dotenv').config();
+const cors = require("cors");
 const app = express();
-
-
  const mongoose = require('mongoose')
 app.use(express.json());
 app.use(morgan('dev'));
 app.use(cors());
 
-const url = 'mongodb+srv://ram:ram123@xchat.qfnk56h.mongodb.net/food-app';
+const url = process.env.MONGO_URL
 
  try {
         // await mongoose.connect('mongodb+srv://ram:ram123@xchat.qfnk56h.mongodb.net/test');
