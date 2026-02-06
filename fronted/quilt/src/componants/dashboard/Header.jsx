@@ -1,11 +1,15 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 export default function Header() {
+  useEffect(()=>{
+    localStorage.getItem('token')
+  })
     const navigate  = useNavigate();
      const [user,setuser] = useState(null)
       const [isauth,setisauth] = useState(false)
+
        const [ishamopen,setishamopen] = useState(true)
   return (
     <div className="w-100%  m-0 p-0 ">
