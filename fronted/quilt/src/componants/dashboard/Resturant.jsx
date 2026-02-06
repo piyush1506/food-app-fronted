@@ -51,7 +51,7 @@ const Opencartpage =()=>{
    try{
      setloading(true);
      const data ={payments:total,cart:cart.map(i=>i._id)}
-       const res = await fetch('http://localhost:8000/api/v1/food/createorder',{
+       const res = await fetch('https://food-app-6vp4.onrender.com/api/v1/food/createorder',{
     method:"POST",
     headers:{
   "Content-Type":"application/json",
@@ -86,7 +86,7 @@ body:JSON.stringify(data)
     const Getdatail =async()=>{
      
 
-        const Res= await fetch(`http://localhost:8000/api/v1/resturant/get/${id}`)
+        const Res= await fetch(`https://food-app-6vp4.onrender.com/api/v1/resturant/get/${id}`)
           const data = await Res.json();
           console.log(data)
           setResturant(data.resturant)
@@ -99,7 +99,7 @@ body:JSON.stringify(data)
    let total = cart.reduce((acc,item)=>acc +Number(item.price),0)
 
   const Openfoodpage = async(i)=>{
-    axios.get(`http://localhost:8000/api/v1/food/find?dish=${i.title}`).
+    axios.get(`https://food-app-6vp4.onrender.com/api/v1/food/find?dish=${i.title}`).
     then(res=>setdetail(res.data.result))
     .catch((err)=>{console.log(err)})
     console.log(detail)

@@ -27,7 +27,7 @@ const Dash = () => {
 
   useEffect(()=>{
     const Allrest= async()=>{
-      const res = await fetch('http://localhost:8000/api/v1/resturant/getall',{
+      const res = await fetch('https://food-app-6vp4.onrender.com/api/v1/resturant/getall',{
         method:"GET",
         headers:{
           "Content-Type":"application/json"
@@ -44,7 +44,7 @@ const Dash = () => {
     const token = localStorage.getItem('token')
     const Allcategory = async()=>{
       try {
-          const res = await fetch('http://localhost:8000/api/v1/food/home',{
+          const res = await fetch('https://food-app-6vp4.onrender.com/api/v1/food/home',{
       method:'GET',
          headers:{
           'Content-Type':'application/json',

@@ -24,7 +24,7 @@ export default function Dish() {
     
     useEffect(()=>{
         if (!dishname) return;
-        axios.get(`http://localhost:8000/api/v1/food/find?dish=${dishname}`)
+        axios.get(`https://food-app-6vp4.onrender.com/api/v1/food/find?dish=${dishname}`)
         .then(res=>setResturants(res.data.results))
         
     },[dishname]);
@@ -67,7 +67,7 @@ cart.forEach(item => {
  console.log(total)
           const detail = {  payments:total,cart:cart.map(i=>i._id)}
           console.log(detail)
-      const res =await fetch('http://localhost:8000/api/v1/food/createorder',{
+      const res =await fetch('https://food-app-6vp4.onrender.com/api/v1/food/createorder',{
         method:'POST',
         headers:{
           "Content-Type":"application/json",
