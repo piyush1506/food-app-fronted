@@ -15,7 +15,7 @@ export default function Login() {
       const data = {
         email,password}
            try {
-          const Response = await fetch('http://localhost:8000/api/v1/auth/login',{
+          const Response = await fetch('https://food-app-6vp4.onrender.com/api/v1/auth/login',{
             method:'POST',
             headers:{
               "Content-Type":"application/json"        

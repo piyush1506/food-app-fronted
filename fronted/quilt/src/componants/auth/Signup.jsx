@@ -22,7 +22,7 @@ export default function Signup() {
     username,email,password,address,phone,answer
   }
        try {
-      const Response = await fetch('http://localhost:8000/api/v1/auth/register',{
+      const Response = await fetch('https://food-app-6vp4.onrender.com/api/v1/auth/register',{
         method:'POST',
         headers:{
           "Content-Type":"application/json"        
