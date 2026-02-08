@@ -3,14 +3,19 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 export default function Header() {
-  useEffect(()=>{
-    localStorage.getItem('token')
-  })
     const navigate  = useNavigate();
      const [user,setuser] = useState(null)
-      const [isauth,setisauth] = useState(false)
-
+       const [isauth,setisauth] = useState(false)
        const [ishamopen,setishamopen] = useState(true)
+        useEffect(()=>{
+   const token = localStorage.getItem('token')
+  const data =  localStorage.getItem('user')
+  if (token && data ) {
+   
+    setisauth(true)
+    setuser( JSON.parse(data))
+  }
+  },[])
   return (
     <div className="w-100%  m-0 p-0 ">
           <div className="nav h-[60px] flex  bg-gray-800 text-white  justify-between px-2 w-100%">

@@ -1,9 +1,8 @@
 const express  = require('express');
 const router = express.Router();
  
- const  { getAllOrderdatailcontroller,createFoodController,updateFoodByIdController,createorderController, getAllFoodController,getFoodByrestIdController ,getFoodByIdController, deleteFoodByIdController, updateOrederStausConroller, getResturantBydish} = require('../controller/foodcontroller')
+ const  {createFoodController,updateFoodByIdController, getAllFoodController,getFoodByrestIdController ,getFoodByIdController, deleteFoodByIdController, getResturantBydish} = require('../controller/foodcontroller')
 const {authmiddleware} = require('../middlewares/authmiddleware');
-const { adminmiddleware } = require('../middlewares/adminmiddlware');
 const { getHomefoodController } = require('../controller/getHomefoodController');
 
 
@@ -21,11 +20,7 @@ router.delete('/delete/:id',authmiddleware,deleteFoodByIdController)
 
 // order routes
 
-router.post('/createorder',authmiddleware,createorderController)
-router.get('/cartdetails/:id',authmiddleware,getAllOrderdatailcontroller)
 
-
-router.put('/updatestatus/:id',authmiddleware,adminmiddleware,updateOrederStausConroller)
 router.get('/find',getResturantBydish)
 
 router.get('/home',getHomefoodController)

@@ -28,7 +28,7 @@ const registerController = async(req,res)=>{
              
   
             const user = await User.create({username,email,password:hashpass,address,phone,answer })
-             const payload = {user}
+             const payload = {id: user._id}
       console.log(user)
             const token = await jwt.sign(payload,process.env.JWT_SECRET,{
                 expiresIn:'1d'
@@ -71,11 +71,12 @@ const  loginController = async(req,res)=>{
                  message:'passsword is wrong'
     })        
     }
-    const payload = {user}
+    const payload = {id:user._id}
       console.log(user)
             const token = await jwt.sign(payload,process.env.JWT_SECRET,{
                 expiresIn:'1d'
             })
+            console.log(token)
 
 
  res.status(201).json({success:true,

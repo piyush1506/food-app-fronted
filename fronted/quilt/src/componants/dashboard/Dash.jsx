@@ -2,7 +2,9 @@ import React, { useEffect, useState} from 'react'
 import '../../App.css'
 import {useNavigate,Navigate} from 'react-router-dom'
 import Resturant from './Resturant'
+import API from '../../utils/axiosInstance'
 import Header from './Header'
+
 
 
 const Dash = () => {
@@ -27,7 +29,7 @@ const Dash = () => {
 
   useEffect(()=>{
     const Allrest= async()=>{
-      const res = await fetch('https://food-app-6vp4.onrender.com/api/v1/resturant/getall',{
+      const res = await fetch(`${import.meta.env.VITE_API}/api/v1/resturant/getall`,{
         method:"GET",
         headers:{
           "Content-Type":"application/json"

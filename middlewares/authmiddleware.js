@@ -24,7 +24,7 @@ const  authmiddleware = async(req,res,next)=>{
                 })
             }
             else{
-                 req.userId = decode.id;
+                 req.userId = decode.id || decode._id;
                  next()
             }
         })

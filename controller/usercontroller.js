@@ -34,8 +34,7 @@ const getUserController = async(req,res)=>{
                await user.save();
                res.status(200).json({
                      success:true,
-                         message:'user updated successfully'
-                    
+                         message:'user updated successfully'       
                })       
                
                console.log(user)

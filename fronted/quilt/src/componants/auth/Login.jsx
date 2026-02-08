@@ -1,5 +1,6 @@
 import React,{useState,useEffect} from 'react'
 import { Navigate,useNavigate } from 'react-router-dom';
+import API from '../../utils/axiosInstance';
 
 export default function Login() {
 
@@ -15,7 +16,7 @@ export default function Login() {
       const data = {
         email,password}
            try {
-          const Response = await fetch('https://food-app-6vp4.onrender.com/api/v1/auth/login',{
+          const Response = await fetch(`${import.meta.env.VITE_API}/api/v1/auth/login`,{
             method:'POST',
             headers:{
               "Content-Type":"application/json"        

@@ -39,6 +39,9 @@ app.use('/api/v1/resturant',require('./routes/resturant'))
 
 app.use('/api/v1/category',require('./routes/category'))
 
+//order deials
+
+app.use('/api/v1/order',require('./routes/order'))
 
 app.use('/api/v1/food',require('./routes/foodroutes'))
 
