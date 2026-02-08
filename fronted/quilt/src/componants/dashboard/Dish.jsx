@@ -68,7 +68,7 @@ cart.forEach(item => {
  console.log(total)
           const detail = {  payments:total,cart:cart.map(i=>i._id)}
           console.log(detail)
-      const res =await API(`${import.meta.env.VITE_API}/api/v1/order/createorder`,{
+      const res =await fetch(`${import.meta.env.VITE_API}/api/v1/order/createorder`,{
         method:'POST',
         headers:{
           "Content-Type":"application/json",
