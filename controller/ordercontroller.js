@@ -19,7 +19,7 @@ const getCartdetails = async(req,res)=>{
     res.status(200).json({
         success:true,
         message:'data fetched successfully',
-        usercart: usercart.cart?.title
+        usercart
     })
         
     } catch (error) {
