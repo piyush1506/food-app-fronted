@@ -1,6 +1,7 @@
-import axios from 'axios';
+// import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
+import API from '../../utils/axiosInstance';
 
 export default function Resturant() {
    const [Resturant,setResturant] = useState('')
@@ -51,16 +52,18 @@ const Opencartpage =()=>{
    try{
      setloading(true);
      const data ={payments:total,cart:cart.map(i=>i._id)}
-       const res = await fetch('https://food-app-6vp4.onrender.com/api/v1/food/createorder',{
-    method:"POST",
-    headers:{
-  "Content-Type":"application/json",
-  "Authorization":`Bearer ${token}`
-},
-body:JSON.stringify(data)
-
-  })
-  const resdata = await res.json();
+//        const res = await fetch('https://food-app-6vp4.onrender.com/api/v1/food/createorder',{
+//     method:"POST",
+//     headers:{
+//   "Content-Type":"application/json",
+//   "Authorization":`Bearer ${token}`
+// },
+// body:JSON.stringify(data)
+// const resdata = await res.json();
+//   })
+const res = await API.post('/api/v1/order/createorder',data)
+const resdata = res.data
+  
   if (resdata.success) {
      setsuccess(true)
   }
@@ -86,9 +89,11 @@ body:JSON.stringify(data)
     const Getdatail =async()=>{
      
 
-        const Res= await fetch(`https://food-app-6vp4.onrender.com/api/v1/resturant/get/${id}`)
-          const data = await Res.json();
-          console.log(data)
+        // const Res= await fetch(`https://food-app-6vp4.onrender.com/api/v1/resturant/get/${id}`)
+        //   const data = await Res.json();
+        //   console.log(data)
+        const res = await API.get(`/api/v1/resturant/get/${id}`)
+        const data = res.data
           setResturant(data.resturant)
           setFood(data.resturant.foods)
     } 

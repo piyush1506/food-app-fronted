@@ -9,21 +9,23 @@ export default function Login() {
       const [email,setemail] =useState('');
        const [password,setpassword] =useState('')
          const [isloggedin,setisloggedin] =useState(true)
+
+
        const handlesubmit=async(e)=>{
           e.preventDefault();
-      
-      
       const data = {
         email,password}
            try {
-          const Response = await fetch(`${import.meta.env.VITE_API}/api/v1/auth/login`,{
-            method:'POST',
-            headers:{
-              "Content-Type":"application/json"        
-            },
-            body:JSON.stringify(data)
-          })
-       const resdata = await Response.json();
+          // const Response = await fetch(`${import.meta.env.VITE_API}/api/v1/auth/login`,{
+          //   method:'POST',
+          //   headers:{
+          //     "Content-Type":"application/json"        
+          //   },
+          //   body:JSON.stringify(data)
+          // })
+          const Response = await API.post('/api/v1/auth/login',data);
+          const resdata = Response.data;
+      //  const resdata = await Response.json();
          console.log(resdata)
          
          if (resdata.success === true) {

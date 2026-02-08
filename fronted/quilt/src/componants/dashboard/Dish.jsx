@@ -24,10 +24,23 @@ export default function Dish() {
     let total = cart.reduce((acc,item)=>acc + Number(item.price),0);
     
     useEffect(()=>{
-        if (!dishname) return;
-        axios.get(`https://food-app-6vp4.onrender.com/api/v1/food/find?dish=${dishname}`)
-        .then(res=>setResturants(res.data.results))
-        
+
+      const fetchDish = async()=>{
+         if (!dishname) return;
+         try {
+             const res =  await API.get(`/api/v1/food/find?dish=${dishname}`)
+             setResturants(res.data.results);
+         } catch (error) {
+          console.log(error)
+         }
+
+      }
+       
+        // axios.get(`https://food-app-6vp4.onrender.com/api/v1/food/find?dish=${dishname}`)
+        // .then(res=>setResturants(res.data.results))
+     
+
+        fetchDish()
     },[dishname]);
     const AddtoCart=(item)=>{
        setcart(prev =>{
@@ -68,7 +81,7 @@ cart.forEach(item => {
  console.log(total)
           const detail = {  payments:total,cart:cart.map(i=>i._id)}
           console.log(detail)
-      const res =await fetch('https://food-app-6vp4.onrender.com/api/v1/food/createorder',{
+      const res =await fetch('https://food-app-6vp4.onrender.com/api/v1/order/createorder',{
         method:'POST',
         headers:{
           "Content-Type":"application/json",

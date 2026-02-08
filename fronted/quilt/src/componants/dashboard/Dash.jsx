@@ -29,14 +29,16 @@ const Dash = () => {
 
   useEffect(()=>{
     const Allrest= async()=>{
-      const res = await fetch(`${import.meta.env.VITE_API}/api/v1/resturant/getall`,{
-        method:"GET",
-        headers:{
-          "Content-Type":"application/json"
-        },
-         });
-         const data = await res.json();
-         console.log('all rest',data)
+      // const res = await fetch(`${import.meta.env.VITE_API}/api/v1/resturant/getall`,{
+      //   method:"GET",
+      //   headers:{
+      //     "Content-Type":"application/json"
+      //   },
+      //    });
+      //    const data = await res.json();
+
+      const res = await API.get('/api/v1/resturant/getall')
+      const data = res.data
          setrest(data)
     }
     Allrest();
@@ -46,14 +48,16 @@ const Dash = () => {
     const token = localStorage.getItem('token')
     const Allcategory = async()=>{
       try {
-          const res = await fetch('https://food-app-6vp4.onrender.com/api/v1/food/home',{
-      method:'GET',
-         headers:{
-          'Content-Type':'application/json',
-          'Authorization':`Bearer ${token}`
-        }
-                 })
-           const resdata  = await res.json();
+      //     const res = await fetch('https://food-app-6vp4.onrender.com/api/v1/food/home',{
+      // method:'GET',
+      //    headers:{
+      //     'Content-Type':'application/json',
+      //     'Authorization':`Bearer ${token}`
+      //   }
+      //            })
+      //      const resdata  = await res.json();
+      const res = await API.get('/api/v1/food/home')
+      const resdata  = res.data
            console.log(resdata)
            setallfood(resdata.foods)
     }

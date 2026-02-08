@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 
 import { Navigate, useNavigate } from 'react-router-dom'
 import Login from './Login';
+import API from '../../utils/axiosInstance';
 
 export default function Signup() {
  const navigate  = useNavigate();
@@ -22,14 +23,18 @@ export default function Signup() {
     username,email,password,address,phone,answer
   }
        try {
-      const Response = await fetch('https://food-app-6vp4.onrender.com/api/v1/auth/register',{
-        method:'POST',
-        headers:{
-          "Content-Type":"application/json"        
-        },
-        body:JSON.stringify(data)
-      })
-   const resdata = await Response.json();
+  //     const Response = await fetch('https://food-app-6vp4.onrender.com/api/v1/auth/register',{
+  //       method:'POST',
+  //       headers:{
+  //         "Content-Type":"application/json"        
+  //       },
+  //       body:JSON.stringify(data)
+  //     })
+  //  const resdata = await Response.json();
+
+  const response = await API.post('/api/v1/auth/register',data);
+  const resdata =  response.data
+     
      console.log(resdata)
      if (resdata.success) {
       localStorage.setItem('token',resdata.token)
