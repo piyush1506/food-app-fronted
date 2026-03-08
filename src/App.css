@@ -1,0 +1,102 @@
+.logo{
+    font-family: 'Momo Signature', cursive;
+    font-size: 20px;
+    border: none;
+}
+.hamburger{
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+
+.nav-link ul li{
+    list-style: none;
+    margin-right: 20px;
+    display: flex;
+}
+
+@media screen and (max-width:768px){
+ 
+    .hamburger{
+        display: block;
+        color: aliceblue;
+    }
+    .nav-link ul{
+        
+
+    }
+}
+ .title  {
+  font-family: "", cursive;
+    font-weight: 500;
+    font-size: 2.4rem;
+}
+
+
+body{
+    font-family: 'Bricolage Grotesque', sans-serif;
+}
+/* Hide scrollbar for Chrome, Safari and Opera */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+
+.resttitle{
+
+    font-family: serif;
+    font-size:35px;
+    color: rgb(110, 110, 108);
+}
+.fontst{
+    font-family: "Nunito", sans-serif;
+}
+.cartbody{
+    font-family: "Raleway", sans-serif;
+    /* color: rgb(100, 99, 98); */
+}
+.carttitle{
+    font-family: "PT Serif", serif;
+    font-size: 30px;
+    /* color: rgb(77, 76, 75); */
+}
+.oddate{
+    font-family: "PT Serif", serif;
+    font-size: 15px;
+    /* color: rgb(77, 76, 75); */
+}
+.status{
+    background: #d940df;
+    color: rgb(248, 248, 248);
+    padding: 1px 5px;
+    font-size: 19px;
+    border-radius: 5px;
+}
+.dashimg{
+    width: 250px;
+  
+    object-fit: cover;
+}
+.piech{
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+}
+.graph{
+  width: 100%;
+  object-fit: cover;
+ 
+}
+@media screen  and (max-width: 768px) {
+    .dash {
+        display: flex;
+        flex-direction: column;
+    }
+    
+}
