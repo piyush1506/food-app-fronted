@@ -11,7 +11,7 @@ export default function PieChart() {
 
     useEffect(()=>{
         const getData = async()=>{
-            const res = await fetch('http://localhost:8000/api/v1/admin/stats',
+            const res = await fetch('https://food-app-p2kr.onrender.com/api/v1/admin/stats',
                 { method:'GET',
                 headers:{
                     'Content-Type':'application/json',

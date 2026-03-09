@@ -25,7 +25,7 @@ export default function Dauth() {
   const handleRegister = async (e) => {
     e.preventDefault();
   try{    
-     const response =  await fetch(`http://localhost:8000/api/otp/send-otp`,{
+     const response =  await fetch(`https://food-app-p2kr.onrender.com/api/otp/send-otp`,{
           method:'POST',
           headers:{
             'Content-Type':'application/json'
@@ -58,7 +58,7 @@ export default function Dauth() {
 
     try {
       const response = await fetch(
-        'http://localhost:8000/api/v1/dboy/loginboy',
+        'https://food-app-p2kr.onrender.com/api/v1/dboy/loginboy',
         {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
@@ -88,7 +88,7 @@ export default function Dauth() {
   const handleverifyotp = async(e)=>{
     e.preventDefault()
     try {
-       const res = await fetch(`http://localhost:8000/api/otp/verify-otp`,{
+       const res = await fetch(`https://food-app-p2kr.onrender.com/api/otp/verify-otp`,{
          method:'POST',
           headers:{
             'Content-Type':'application/json'

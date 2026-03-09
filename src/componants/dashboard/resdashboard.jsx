@@ -44,7 +44,7 @@ export default function Resdashboard() {
             location:address,
             foods:[],time,pickup}
             console.log(payload)
-         const res = await fetch('https://food-app-6vp4.onrender.com/api/v1/resturant/create',{
+         const res = await fetch('https://food-app-p2kr.onrender.com/api/v1/resturant/create',{
             method:'POST',
             headers:{
                 "Content-Type":"application/json",
@@ -74,7 +74,7 @@ export default function Resdashboard() {
              ratingCount:ratingc
             }
             console.log(payload)
-         const res = await fetch('https://food-app-6vp4.onrender.com/api/v1/food/create-food',{
+         const res = await fetch('https://food-app-p2kr.onrender.com/api/v1/food/create-food',{
             method:'POST',
             headers:{
                 "Content-Type":"application/json",
@@ -98,7 +98,7 @@ export default function Resdashboard() {
              
          const payload ={title, imageUrl}
             console.log(payload)
-         const res = await fetch('https://food-app-6vp4.onrender.com/api/v1/category/create',{
+         const res = await fetch('https://food-app-p2kr.onrender.com/api/v1/category/create',{
             method:'POST',
             headers:{
                 "Content-Type":"application/json",

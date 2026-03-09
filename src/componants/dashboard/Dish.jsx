@@ -110,7 +110,7 @@ cart.forEach(item => {
             }
           }
           console.log(detail)
-      const res =await fetch('https://food-app-6vp4.onrender.com/api/v1/order/createorder',{
+      const res =await fetch('https://food-app-p2kr.onrender.com/api/v1/order/createorder',{
         method:'POST',
         headers:{
           "Content-Type":"application/json",
